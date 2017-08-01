@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>斐波那锲数列</title>
+</head>
+<body>
+	<script>
+	//求斐波那锲数列第n项
+	//解决问题:   减少代码重复执行的次数
+	// 已经执行过的函数, 不要重复执行了, 将
+	// 已经执行过的函数结果保存起来
+	//   后面如果再次调用此方法,先判断是否保存有此方法的值,如果有就直接取出来使用,如果没有就调用函数进行计算;
+
+	function createFib(){
+		var arr=[];//用于存放已经计算的结果
+		var count=0;
+		function fib(n){
+			//首先判断是否保存了此项的值,如果保存了就直接取值
+			if(arr[n]){
+				return arr[n];
+			}else{
+				count++;
+				//如果没有找到在计算
+				var num;
+				if(n<=2){
+					num = 1;
+				}else{
+					num=fib(n-1)+fib(n-2);
+				}
+				arr[n]=num; //保存计算的结果
+				return num;
+			}
+		}
+		return fib;
+	};	
+
+	var f=createFib();
+	console.log(f(100));
+		/*console.log(fib(10));
+		console.log(count);
+		console.log(arr);*/
+		/*count=0;
+		console.log(fib(100));
+		console.log(count);
+		count=0;
+		console.log(fib(1000));
+		console.log(count);*/
+	</script>
+</body>
+</html>

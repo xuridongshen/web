@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>优化按钮点击闭包代码</title>
+	<style>
+        button{
+            width: 150px;
+            height: 50px;
+            display: block;
+            margin:20px ;
+        }
+    </style>
+</head>
+<body>
+<button>第1个</button>
+<button>第2个</button>
+<button>第3个</button>
+<button>第4个</button>
+<button>第5个</button>
+<button>第6个</button>
+<button>第7个</button>
+<button>第8个</button>
+	<script>
+		var btns =document.querySelectorAll("button");
+
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].onclick = function(j){
+				return function inner(){
+					alert(j);
+				}
+			}(i);
+		}
+
+
+		
+	</script>
+</body>
+</html>

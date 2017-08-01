@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	<script>
+/*		function fn(value){
+			var num=100;
+
+			if(value){
+				num=value
+			}
+			return num;
+		}
+		console.log(fn());
+		console.log(fn(300));
+		fn(300);
+		console.log(fn());*/
+
+		/*function fn(){
+			var num=100;
+			function inner(){
+				return num
+			};
+			return inner;
+		}
+
+		var f=fn();
+		console.log(f);
+		console.log(f());
+		var b=f();
+		var c=f();
+		console.log(b);
+		console.log(c);*/
+
+		function fn(){
+			var name = "zs";
+			var age = 18;
+			return {
+				getName:function(){
+					
+				}
+			}
+		}
+	</script>
+</body>
+</html>

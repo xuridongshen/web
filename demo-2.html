@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>递归调用</title>
+</head>
+<body>
+	 <div>
+        <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span></p>
+        <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span>
+        </p>   <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span></p>
+    </div>
+    <div>
+        <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span></p>
+        <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span>
+        </p>   <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span></p>
+    </div>
+    <div>
+        <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span></p>
+        <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span>
+        </p>   <p><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span><span> spanspanspanspan  </span></p>
+    </div>
+
+    <script>
+    	//获取页面中所有的标签   加边框
+    	function getAll(ele){
+    		//用以存放获取的所有的子元素
+    		var allEle = [];
+    		//获取ele直接的子元素
+    		var eles = ele.children;
+    		// console.log(eles);
+    		for (var i = 0; i < eles.length; i++) {
+    			  allEle.push(eles[i]);
+    			  // console.log(allEle);
+    			  //每个子元素在去获取自己的子元素
+    			  var temp = getAll(eles[i]);
+    			  //把子元素获取的子元素追加到allEle中
+    			  allEle = allEle.concat(temp);
+    		}
+    		return allEle;
+    	}
+
+    	// console.log(getAll(document.body));
+    	 
+    	var tags = getAll(document.body);
+    	//给每个元素加边框
+    	for (var i = 0; i < tags.length; i++) {
+    			tags[i].style.border = "1px solid red";
+    	}
+    </script>
+</body>
+</html>

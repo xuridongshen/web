@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var  arr = [ { name: '张三1' },
+                   { name: '张三2' },
+                   { name: '张三3' },
+                   { name: '张三4' } ];
+    // 利用循环, 给他添加方法
+	    for ( var i = 0; i < arr.length; i++) {
+	    	arr[i].index=i;
+	        arr[ i ].sayHello = function () {
+	            console.log(this.index+1);
+	        };
+	        arr[i].sayHello();
+	    }
+
+	    var  arr = [ { name: '张三1' },
+                   { name: '张三2' },
+                   { name: '张三3' },
+                   { name: '张三4' } ];
+    // 利用循环, 给他添加方法
+	    for ( var i = 0; i < arr.length; i++) {
+	    	
+	        arr[ i ].sayHello = function () {
+	            return function inner(){
+	            	console.log()
+	            }
+	        };
+	        
+	    }
+	    
+	    	
+	</script>
+</body>
+</html>

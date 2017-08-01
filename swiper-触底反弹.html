@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>swiper-导航栏触底反弹</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul{
+			float: left;
+		}
+		li{
+			list-style: none;
+			/*float: left;*/
+		}
+		ul li.swiper-slide{
+			width: 10%;
+		}
+		li.swiper-slide-active{
+			width: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-container swiper-container-horizontal swiper-container-free-mode">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide swiper-slide-active">我是第一个</li>
+			<li class="swiper-slide swiper-slide-active">我是第二个</li>
+			<li class="swiper-slide swiper-slide-active">我是第三个</li>
+			<li class="swiper-slide swiper-slide-active">我是第四个</li>
+			<li class="swiper-slide swiper-slide-active">我是第四个</li>
+			<li class="swiper-slide swiper-slide-active">我是第四个</li>
+			<li class="swiper-slide swiper-slide-active">我是第四个</li>
+			<li class="swiper-slide swiper-slide-active">我是第四个</li>
+		</ul>
+	</div>
+</body>
+<script src="js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 5,
+        paginationClickable: true,
+        spaceBetween: 30,
+        freeMode: true
+    });
+</script>
+</html>

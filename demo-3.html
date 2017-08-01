@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>递归练习</title>
+</head>
+<body>
+	<script>
+		//求n阶乘
+		function fn(n) {
+			if(n==1){
+				return 1;
+			}
+			return n*fn(n-1);
+		}
+		console.log(fn(5));
+
+		//求m的n次幂
+		function pow(m,n){
+			if(n==1){
+				return m;
+			}
+			return m*pow(m,n-1)
+		}
+		console.log(pow(5,10));
+
+		//斐波那锲数列
+		/*规律：  f(n)=f(n-1)+f(n-2)
+          1,1,2,3,5,8,13,21,34,55......
+        */
+		function fn(n){
+			if(n<=2){
+				return 1;
+			}
+			return fn(n-1)+fn(n-2)
+		}
+		console.log(fn(10));
+	</script>
+</body>
+</html>
