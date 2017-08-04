@@ -9,18 +9,13 @@
 			padding: 0;
 			margin: 0;
 		}
-		ul{
-			float: left;
-		}
+
 		li{
 			list-style: none;
-			/*float: left;*/
 		}
-		ul li.swiper-slide{
-			width: 10%;
-		}
-		li.swiper-slide-active{
-			width: 0;
+		div ul li.swiper-slide{
+			width: 100px;
+			background:red;
 		}
 	</style>
 </head>
@@ -41,7 +36,7 @@
 <script src="js/swiper.min.js"></script>
 <script>
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 5,
+        //slidesPerView: 5,
         paginationClickable: true,
         spaceBetween: 30,
         freeMode: true
